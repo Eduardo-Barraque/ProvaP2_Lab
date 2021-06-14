@@ -1,20 +1,54 @@
+body{
+    margin: 0px;}
+
+/*carrinho*/    
 .logo{
     width: 50px;
 }
-body{
+
+.page-header{
+    background-color: #ffff00;
+}
+/*Catalogo*/
+.container{
+    display: inline-block;
+    width: 100%;
+}
+.item_borda {
+  border: solid 1px;
+  width: 200px;
+}
+.item_catalogo {
+    display: inline-flex;
+    height: auto;
+    width: 99%;
+    background-color: white;
+    border-style: groove;
+    border: 1px solid gray ;
+    border-radius: 2px;
+    margin: 5px;
+
+}
+.item_catalogo p{
+    display:block;
+    width: 100%;
     margin: 0px;
 }
-.page-header{
-    background-color: #FFFF00;
+.fotos{
+    height: 100px;
+    width: auto;
+
+}
+.produto_nome{
+    font-family: times new roman;
+    font-size:20px;
+    color: rgb(56, 56, 56);
+    font-weight: bold;
 }
 
-#full { width: 389px; height: 186px; }
-#window1 { background-position: 369px -11px; }
-#window2 { background-position: 194px -91px; }
-
-.iconback {
-  border: solid 1px;
-  background-image: url(http://www.icons-land.com/images/products/VistaPlayStopPauseIcons.jpg);
+.verde{
+    color: green
 }
-
-.window { width: 80px; height: 80px; margin: 1em; }
+.info_padding{
+    padding: 3px;
+}

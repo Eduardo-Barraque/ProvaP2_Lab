@@ -12,7 +12,25 @@
 <header class="page-header">
     <span><a href="{{url_for('home')}}"><img class="logo" src="{{url_for('static', filename='img/buscape.png')}}"></a></span>
 </header>
+<section id="carrinho">
 
-    
+</section>
+<div class="container">
+    {%for Item in itens_lista%}
+        <div id="{{Item.id}}" class="item_catalogo">
+            {%for Images in Item.lista_imagens%}
+                <div class ="item_borda">
+                    <img class='fotos' src="{{url_for('static', filename=Images.link)}}">
+                </div>
+            {%endfor%}
+            <div class="info_padding">
+                <p class="produto_nome">{{Item.nome}}</p>
+                <p> <span class="verde"> {{Item.parcela}}x  R${{Item.valorParcela}}</span></p>
+                <p>ou <span class="verde">R${{Item.valorAvista}}</span> à vista</p>
+                <button onclick="" type="submit"></button>
+            </div>
+        </div>
+    {%endfor%}
+</div>
 </body>
 </html>
