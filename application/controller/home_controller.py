@@ -16,6 +16,7 @@ def carrinho():
 def inserir():
     itens_lista = Item_DAO().estoqueBuscape()
     id = request.form.get('id', None)
+    print(id)
     for iten in itens_lista:
         if iten.id == id:
             carrinhoCompras.append(iten)

@@ -13,7 +13,7 @@
     <span><a href="{{url_for('home')}}"><img class="logo" src="{{url_for('static', filename='img/buscape.png')}}"></a></span>
 </header>
 
-<section id="carrinho">
+<section id="carrinho" class="fundo_carrinho">
     {%for Item in carrinhoCompras%}
         <div class='carrinho'>
             {%for Images in Item.lista_imagens%}
@@ -22,10 +22,10 @@
                 </div>
             {%endfor%}
             <div class="info_padding">
-                <p>{{Item.nome}}</p>
-                <p>{{Item.parcela}}{{Item.valorParcela}}</p>
-                <p>{{Item.valorAvista}}</p>
-                <a id="remover" href="{{url_for('remover', id = Item.id)}}" class="remover">Excluir</a>
+                <p class="mod">{{Item.nome}}</p>
+                <p>{{Item.parcela}}x R$ {{Item.valorParcela}}</p>
+                <p>ou R$ {{Item.valorAvista}} à vista</p>
+                <button class="remover"><a id="remover" href="{{url_for('remover', id = Item.id)}}"  class="remover">Excluir</a></button>
             </div>
             
         </div>
@@ -44,8 +44,9 @@
                 <p class="produto_nome">{{Item.nome}}</p>
                 <p> <span class="verde"> {{Item.parcela}}x  R${{Item.valorParcela}}</span></p>
                 <p>ou <span class="verde">R${{Item.valorAvista}}</span> à vista</p>
-                <form method="POST" action="/adicionar">
-                    <input onclick="return inserir()" name="id"  value="{{Item.id}}" type="submit">Adicionar ao carrinho ></input>
+                <form class="form" method="POST" action="/adicionar">
+                    <input name="id" style="visibility: hidden;"  value="{{Item.id}}"></input>
+                    <input onclick="return inserir()" value="Adicionar ao carrinho >" type="submit"></input>
                 </form>
             </div>
         </div>
