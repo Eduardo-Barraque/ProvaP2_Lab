@@ -27,10 +27,7 @@ def inserir():
 @app.route("/remover/<int:id>", methods=['GET'])
 def remover(id:int):
     for iten in carrinhoCompras:
-        print(iten)
-        print(iten.id)
-        print(id)
-        if iten.id == id:
+        if iten.id == '{}'.format(id):
             carrinhoCompras.remove(iten)
             return render_template("home.html", carrinhoCompras = carrinhoCompras)
     return render_template("home.html", carrinhoCompras = carrinhoCompras),404

@@ -17,8 +17,8 @@
     {%for Item in carrinhoCompras%}
         <div class='carrinho'>
             {%for Images in Item.lista_imagens%}
-                <div class="item_borda">
-                    <img class="fotos" src="{{url_for('static',filename=Images.link)}}">
+                <div class="carrinho_borda">
+                    <img class="Cfotos" src="{{url_for('static',filename=Images.link)}}">
                 </div>
             {%endfor%}
             <div class="info_padding">

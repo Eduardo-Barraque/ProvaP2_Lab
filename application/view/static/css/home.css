@@ -20,6 +20,17 @@ body{
     margin: 5px;
 
 }
+.carrinho_borda{ border: solid 1px;
+    width: 200px;
+    background-color: white;
+    width: 150px;
+    }
+.Cfotos{
+    height: 100px;
+    width: auto;
+    
+}
+    
 /*Catalogo*/
 .container{
     display: inline-block;
@@ -28,6 +39,7 @@ body{
 .item_borda {
   border: solid 1px;
   width: 200px;
+  background-color: white;
 }
 .item_catalogo {
     display: inline-flex;

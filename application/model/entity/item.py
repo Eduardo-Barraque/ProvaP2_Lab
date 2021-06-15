@@ -1,7 +1,7 @@
 from application.model.entity.images import Images
 from typing import List
 class Item:
-    def __init__(self, id, nome, lista_imagens: List[Images], parcela:int, valorParcela:float, valorAvista:float ):
+    def __init__(self, id:int, nome:str, lista_imagens: List[Images], parcela:int, valorParcela:float, valorAvista:float ):
         self.__nome = nome
         self.__id = id
         self.__lista_imagens = lista_imagens
@@ -13,6 +13,8 @@ class Item:
     @property
     def id(self):
         return self.__id
+    
+    
     
     @property
     def nome(self):
