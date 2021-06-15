@@ -1,10 +1,14 @@
-<section class='item' id='item-{{item.id}}}'>
-    <div>
-    <img src="{{Item.}}">
-    </div>
-    <div>
-        <p> {{item.name}}</p>
-        <p>{{item.parcelas}}{{item.valorParcela}}</p>
-        <p>{{item.valorAvista}}</p>
-    </div>
-</section>
+{%for Item in itens_carrinho%}
+    <section class='item' id='item-{{item.id}}}'>
+        {%for Images in Item.lista_imagens%}
+            <div>
+                <img src="{{url_for('static',filename=Images.link)}}">
+            </div>
+        {%endfor%}
+        <div>
+            <p> {{Item.name}}</p>
+            <p>{{Item.parcelas}}{{Item.valorParcela}}</p>
+            <p>{{Item.valorAvista}}</p>
+        </div>
+    </section>
+{%endfor%}

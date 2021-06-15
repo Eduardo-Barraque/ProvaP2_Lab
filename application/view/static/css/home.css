@@ -9,6 +9,17 @@ body{
 .page-header{
     background-color: #ffff00;
 }
+.carrinho{
+    display: inline-flex;
+    height: auto;
+    width: 99%;
+    background-color: gold;
+    border-style: groove;
+    border: 1px solid gray ;
+    border-radius: 2px;
+    margin: 5px;
+
+}
 /*Catalogo*/
 .container{
     display: inline-block;

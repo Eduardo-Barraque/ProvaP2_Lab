@@ -24,9 +24,13 @@ class Item_DAO:
         [produto4_img1], '10', '259.90', '2599.00')
         
         self.__estoque = [produto1, produto2, produto3, produto4]
-        
+    
+
+    
     def estoqueBuscape(self):
         return self.__estoque
+    
+carrinhoCompras = []
     
 
         
