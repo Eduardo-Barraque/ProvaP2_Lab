@@ -5,6 +5,7 @@ from application.model.dao.item_dao import Item_DAO, carrinhoCompras
 @app.route("/", methods=['GET'])
 def home():
     itens_lista = Item_DAO().estoqueBuscape()
+    print(carrinhoCompras)
     return render_template("home.html", carrinhoCompras = carrinhoCompras , itens_lista = itens_lista,)
 
 @app.route("/carrinho",methods=['GET'])
@@ -14,7 +15,6 @@ def carrinho():
 @app.route("/adicionar", methods=['POST'])
 def inserir():
     itens_lista = Item_DAO().estoqueBuscape()
-    print(carrinhoCompras)
     id = request.form.get('id', None)
     for iten in itens_lista:
         if iten.id == id:
@@ -25,13 +25,13 @@ def inserir():
     return render_template('home.html', carrinhoCompras = carrinhoCompras)
         
 @app.route("/remover/<int:id>", methods=['GET'])
-def remover(id: int):
+def remover(id:int):
     for iten in carrinhoCompras:
+        print(iten)
+        print(iten.id)
+        print(id)
         if iten.id == id:
-            
             carrinhoCompras.remove(iten)
             return render_template("home.html", carrinhoCompras = carrinhoCompras)
-        else:
-            continue
-    return render_template("home.html", carrinhoCompras = carrinhoCompras), 404
+    return render_template("home.html", carrinhoCompras = carrinhoCompras),404
     
